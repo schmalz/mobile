@@ -8,7 +8,7 @@ defmodule FreqOverload do
 
   # Client API
 
-  def start_link() do
+  def start_link(_arg) do
     child = worker(GenServer, [], restart: :temporary)
     Supervisor.start_link([child], name: __MODULE__, strategy: :simple_one_for_one)
   end

@@ -11,7 +11,7 @@ defmodule Frequency do
 
   # Client API
 
-  def start_link() do
+  def start_link(_arg) do
     GenServer.start_link(__MODULE__, [], [name: __MODULE__])
   end
 
