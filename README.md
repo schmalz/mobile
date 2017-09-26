@@ -1,6 +1,13 @@
 # Mobile
 
-**TODO: Add description**
+Working through the "mobile" application from "Designing for Scalability with Erlang/OTP" by Francesco Cesarini and
+Steve Vinoski.
+
+I am translating to Elixir (version 1.5.1 on Erlang/OTP 20) as I go.
+
+In some cases things I have changed things; e.g. since `GenEvent` is deprecated, I have used the approach advocated
+[here](http://blog.plataformatec.com.br/2016/11/replacing-genevent-by-a-supervisor-genserver/) to implement the
+`FreqOverload` event manager.
 
 ## Installation
 
