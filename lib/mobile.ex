@@ -1,18 +1,7 @@
 defmodule Mobile do
-  @moduledoc """
-  Documentation for Mobile.
-  """
+  use Application
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Mobile.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_type, _args) do
+    BscSup.start_link()
   end
 end
