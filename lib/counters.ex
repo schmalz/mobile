@@ -1,5 +1,5 @@
 defmodule Counters do
-  use GenServer
+  use GenServer, shutdown: 2_000
 
   @moduledoc """
   An event counter.

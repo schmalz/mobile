@@ -1,5 +1,5 @@
 defmodule FileLogger do
-  use GenServer
+  use GenServer, shutdown: 2_000
 
   @moduledoc """
   A logger that logs to either a file or standard I/O (depending on the initialisation argument).

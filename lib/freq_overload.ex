@@ -8,9 +8,8 @@ defmodule FreqOverload do
 
   # Client API
 
-  def start_link(_arg) do
-    child = worker(GenServer, [], restart: :temporary)
-    Supervisor.start_link([child], name: __MODULE__, strategy: :simple_one_for_one)
+  def start_link(arg) do
+    Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
   end
 
   def stop() do
@@ -32,8 +31,10 @@ defmodule FreqOverload do
 
   # Server Callbacks
 
-  def init(_arg), do: :ok # The compiler requires that we provide an implementation but empirical evidence suggests
-                          # that is not called in the case of a `:simple_one_for_one` supervisor.
+  def init(_arg) do
+    child = worker(GenServer, [], restart: :temporary)
+    Supervisor.init([child], strategy: :simple_one_for_one)
+  end
 
   # Private Functions
 
