@@ -21,6 +21,10 @@ use Mix.Config
 #     config :logger, level: :info
 #
 
+config :mobile,
+  frequency_initial_frequencies: [10, 11, 12, 13, 14, 15, 16],
+  bsc_sup_file_logger_path: "log.txt"
+
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
 # by uncommenting the line below and defining dev.exs, test.exs and such.

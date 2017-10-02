@@ -1,12 +1,14 @@
 defmodule BscSup do
   use Supervisor
 
+  @file_logger_path Application.get_env(:mobile, :bsc_sup_file_logger_path)
+
   # Client API
 
   def start_link() do
     {:ok, pid} = Supervisor.start_link(__MODULE__, [], name: __MODULE__)
     FreqOverload.add_handler(Counters, {})
-    FreqOverload.add_handler(FileLogger, {:file, "log.txt"})
+    FreqOverload.add_handler(FileLogger, {:file, @file_logger_path})
     {:ok, pid}
   end
 

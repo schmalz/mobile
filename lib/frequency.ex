@@ -7,7 +7,7 @@ defmodule Frequency do
   """
 
   @initial_allocations []
-  @initial_frequencies [10, 11, 12, 13, 14, 15]
+  @initial_frequencies Application.get_env(:mobile, :frequency_initial_frequencies)
 
   # Client API
 
